@@ -18,8 +18,6 @@ jobs:
   unit_test:
     needs: [security_test]
     runs-on: ubuntu-latest  
-  unit_test:
-    runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: backend
