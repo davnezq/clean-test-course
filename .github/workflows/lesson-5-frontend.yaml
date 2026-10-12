@@ -21,6 +21,14 @@ jobs:
     defaults:
       run:
         working-directory: frontend
+  security_test:
+    steps:
+    - name: ZAP Baseline Scan
+      uses: zaproxy/action-baseline@v0.15.0
+      with:
+          target: 'https://hangryhippo.quantic.host'
+    needs: [deploy]
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7.0.1
 #      - run: npm install && npm run build (commented out to save learner time)
